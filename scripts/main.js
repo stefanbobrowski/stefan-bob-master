@@ -2,7 +2,9 @@ $(document).ready(function() {
 
     window.setTimeout(function() {
         $('.lightning').addClass('flash');
-        $('.headshot-wrapper').addClass('lit');
+        if (window.matchMedia('(min-width: 600px)').matches) {
+            $('.headshot-wrapper').addClass('lit');
+        }
     }, 400);
 
     $.fn.visible = function(partial, offset) {
@@ -23,7 +25,6 @@ $(document).ready(function() {
 
     var skills = $('.skills');
     var skillList = skills.find('.skill-list li');
-    var work = $('.work');
     var skillsVisible = false;
     var workVisible = false;
     var currentWorkItem;
@@ -39,23 +40,17 @@ $(document).ready(function() {
     animateSkills();
 
     function animateSkills() {
-        if( skills.visible(false) && ! skillsVisible) {
-            skillList.addClass('come-in-skill');
+        if (window.matchMedia('(min-width: 600px)').matches) {        
+            if( skills.visible(false) && ! skillsVisible) {
+                skillList.addClass('come-in-skill');
 
-            window.setTimeout(function() {
-                skillList.addClass('appeared');
-            }, 1200);
+                window.setTimeout(function() {
+                    skillList.addClass('appeared');
+                }, 1200);
 
-            skillsVisible = true;
+                skillsVisible = true;
+            }
         }
-
-        $('.work-list li').each(function(i, el) {
-            var el = $(el);
-
-            // if (el.visible(true)) {
-            //     el.addClass('come-in-work');
-            // }
-        });
     }
 
 });

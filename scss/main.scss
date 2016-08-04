@@ -90,13 +90,17 @@ table {
 
 
 // Variables
+
 $sm-break: 480px;
 $md-break: 767px;
 $lg-break: 991px;
 
 $orange: #e18b46;
+$purple: #A781CB;
+
 
 // Mixins
+
 @mixin font-proxima-light {
     font-family: 'ProximaNova-Light', Helvetica, Arial, sans-serif;
 }
@@ -143,6 +147,7 @@ $orange: #e18b46;
 
 
 // General Styles
+
 html {
     box-sizing: border-box;
     height: 100%;
@@ -220,19 +225,6 @@ a.site-link {
 }
 
 @media screen and (min-width: $sm-break) {
-    .come-in-work {
-        opacity: 1 !important;
-        transform: translateY(300px);
-        animation: come-in-work 0.6s ease forwards;
-    }
-
-    .already-visible-work {
-        transform: translateY(0);
-    }
-
-    @keyframes come-in-work {
-        to { transform: translateY(0); }
-    }
 
     .come-in-skill {
         transform: translateY(300px);
@@ -244,7 +236,9 @@ a.site-link {
     }
 }
 
+
 /* Hero */
+
 .hero {
     position: relative;
     height: 620px;
@@ -304,6 +298,10 @@ a.site-link {
             border-radius: 50%;
             opacity: 0.5;
             transition: opacity 0s ease .035s;
+
+            @media screen and (max-width: 600px) {
+                opacity: 1;
+            }
         }           
     }
 
@@ -374,7 +372,9 @@ a.site-link {
     }
 }
 
+
 /* About */
+
 .about {
     padding: 90px 0 75px 0;
     text-align: center;
@@ -392,7 +392,9 @@ a.site-link {
     }
 }
 
+
 /* Skills */
+
 .skills {
     margin: 10px 0 20px 0;
 
@@ -415,7 +417,11 @@ a.site-link {
             background: rgba(255, 255, 255, 0.4);
             transition: background 0.3s ease, border 0.2s linear;
             cursor: pointer;
-            transform: translateY(300px);
+
+            @media screen and (max-width: 600px) {
+                border-right: 5px solid #fff;
+                border-bottom: 5px solid #fff;
+            }
 
             &:hover {
                 background-color: rgba(255, 255, 255, 0);
@@ -423,6 +429,10 @@ a.site-link {
 
             &.appeared {
                 border-right: 5px solid #fff;
+
+                @media screen and (max-width: 1100px) {
+                    border-bottom: 5px solid #fff;
+                }
             }
 
             &:first-child {
@@ -469,7 +479,6 @@ a.site-link {
             @media screen and (max-width: 1100px) {
                 width: 25%;
                 height: 115px;
-                border-bottom: 5px solid #fff;
             }
 
             @media screen and (max-width: 600px) {
@@ -483,12 +492,14 @@ a.site-link {
     }
 }
 
+
 /* Work */
+
 .work {
     padding: 90px 0;
 
     .container {
-        width: 800px;
+        /*width: 800px;*/
     }
 
     .work-list {
@@ -496,24 +507,14 @@ a.site-link {
         flex-wrap: wrap;
         justify-content: space-between;
 
-        @media screen and (max-width: 450px) {
-            justify-content: center;
-        }
-
         li {
             width: 32%;
-            margin-bottom: 15px;
+            margin-bottom: 2%;
 
             @media screen and (max-width: 600px) {
                 width: 48%;
                 margin-bottom: 4%;
             }          
-
-            @media screen and (max-width: 450px) {
-                width: 100%;
-                max-width: 220px;
-                margin-bottom: 5%;
-            }
 
             a {
                 position: relative;
@@ -581,23 +582,43 @@ a.site-link {
     }
 }
 
+
 /* Parallax */
+
 .parallax-container {
-    height: 260px;
+    height: 280px;
     margin: 20px 0;
-    background: url('../images/parallax-bg.jpg') no-repeat fixed 50% 78%;
+    padding: 100px 0;
+    background: url('../images/parallax-bg-new.jpg') no-repeat fixed 100% 60%;
     background-size: cover;
 }
 
+
 /* Contact */
+
 .contact {
     width: 100%;
     padding: 90px 0;
 
     p {
-        margin-bottom: 30px;
         text-align: center;
     }
+
+    .social-box {
+      margin: 20px 0 30px 0;
+      text-align: center;
+        a {
+            margin-right: 10px;
+            font-size: 38px;
+            color: $purple;
+            text-decoration: none;
+            transition: color 0.2s linear;        
+
+            &:hover {
+              color: lighten($purple, 8%);
+            }
+        }
+    }    
 
     .contact-form {
         width: 100%;
@@ -638,12 +659,11 @@ a.site-link {
 
 /* Footer */
 
-  footer {
-    background-color: #f7f7f7;
+footer {
+    background-color: #333;
 
     .footer-wrapper {
-        height: 300px;
-        padding: 0px 32px;
+        padding: 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -660,41 +680,5 @@ a.site-link {
     p {
         margin: 0;
         color: #949595;
-    }
-
-    .social-box {
-      margin: 20px 0;
-        a {
-            margin-right: 10px;
-            font-size: 38px;
-            color: #949595;
-            text-decoration: none;
-            transition: color 0.2s linear;        
-
-            &:hover {
-              color: #ec7f41;
-            }
-        }
-    }
-}
-
-/* Style Guide */
-.style-guide {
-    p, h1 {
-        &:first-of-type {
-            @include font-proxima-light;
-        }
-        &:nth-of-type(2) {
-            @include font-franklin;            
-        }
-        &:last-of-type {
-            @include font-garamond;            
-
-        }
-    }
-
-    h1 {
-        font-size: 30px;
-        font-weight: 700;
     }
 }
