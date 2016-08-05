@@ -1,11 +1,16 @@
 $(document).ready(function() {
 
+    /* Lightning */
+
     window.setTimeout(function() {
         $('.lightning').addClass('flash');
         if (window.matchMedia('(min-width: 600px)').matches) {
             $('.headshot-wrapper').addClass('lit');
         }
     }, 400);
+
+
+    /* Visible? */
 
     $.fn.visible = function(partial, offset) {
         currentWorkItem = $(this);
@@ -23,21 +28,12 @@ $(document).ready(function() {
         return compareBottom <= viewBottom;
     };
 
+
+    /* Animate Skills */
+
     var skills = $('.skills');
     var skillList = skills.find('.skill-list li');
-    var skillsVisible = false;
-    var workVisible = false;
-    var currentWorkItem;
-
-    $(window).on('scroll load', function(e) {
-        if (e.type == 'load') {
-
-        }
-
-        animateSkills();
-    });
-
-    animateSkills();
+    var skillsVisible = false;    
 
     function animateSkills() {
         if (window.matchMedia('(min-width: 600px)').matches) {        
@@ -52,5 +48,45 @@ $(document).ready(function() {
             }
         }
     }
+
+
+    /* Animate Work */
+
+    // var work = $('.work');
+    // var workList = work.find('.work-list li');
+    // var workVisible = false;
+
+    // function animateWork() {
+    //     if (window.matchMedia('(min-width: 600px)').matches) {
+
+    //         if( work.visible(false) && ! workVisible) {
+    //             console.log('we here');
+
+    //             workList.addClass('come-in-work');
+
+    //             workVisible = true;
+    //         }
+
+    //     }
+    // }
+
+
+    $(window).on('scroll load', function(e) {
+        animateSkills();
+        // animateWork();
+    });
+
+        function goToByScroll(id){
+        $('html,body').animate({scrollTop: $("#"+id).offset().top},1000);
+        return false;
+    }
+
+    $('.contact-link').on('click', function() {
+        console.log('hello');
+        goToByScroll('contact');
+    })
+
+
+
 
 });

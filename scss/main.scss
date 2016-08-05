@@ -96,7 +96,7 @@ $md-break: 767px;
 $lg-break: 991px;
 
 $orange: #e18b46;
-$purple: #A781CB;
+$purple: #9B85CD;
 
 
 // Mixins
@@ -169,24 +169,25 @@ p {
 a.site-link {
     @include font-proxima-bold;
     text-decoration: none;
+    white-space: nowrap;
     color: $orange;
     border-bottom: 1px solid transparent;
-    white-space: nowrap;
     transition: border-color 0.2s ease, padding-bottom 0.2s ease;
 
     &:hover {
         padding-bottom: 5px;
         border-color: $orange;
+        cursor: pointer;
     }
 }
 
 .clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
     content: " ";
-    clear: both;
+    display: block;
     height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 .container {
@@ -197,17 +198,17 @@ a.site-link {
 
 .section-header {
     position: relative;
-    @include font-franklin;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     max-width: 640px;
     margin: 0 auto 40px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include font-franklin;
+    font-size: 1em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 @keyframes flash {
@@ -222,18 +223,6 @@ a.site-link {
     2%   { opacity: 0.9; }
     20%  { opacity: 0.9; }
     100% { opacity: 0.5; }
-}
-
-@media screen and (min-width: $sm-break) {
-
-    .come-in-skill {
-        transform: translateY(300px);
-        animation: come-in-skill 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
-    }
-
-    @keyframes come-in-skill {
-        to { transform: translateY(0); }
-    }
 }
 
 
@@ -276,11 +265,12 @@ a.site-link {
 
             &:after {
                 content:'';
-                position:absolute;
-                top: 50%; left: 50%;
                 width: 150px;
                 height: 150px;
                 margin: -75px 0 0 -75px;
+                position:absolute;
+                top: 50%; 
+                left: 50%;                
                 border-radius: 100%;
                 box-shadow: 0px 0px 0px 2000px rgba(255, 255, 255, 1);
                 opacity: 0.5;
@@ -289,14 +279,14 @@ a.site-link {
 
         .headshot {
             display: block;
-            position: absolute;
-            z-index: 11;
             width: 130px;
+            margin: -65px 0 0 -65px;
+            position: absolute;
             left: 50%;
             top: 50%;
-            margin: -65px 0 0 -65px;
             border-radius: 50%;
             opacity: 0.5;
+            z-index: 11;
             transition: opacity 0s ease .035s;
 
             @media screen and (max-width: 600px) {
@@ -307,9 +297,9 @@ a.site-link {
 
     .lightning {
         max-width: 50%;
-        opacity: 0;
         position: absolute;
         top: 0;
+        opacity: 0;
         z-index: 9;
 
         @media screen and (max-width: 600px) {
@@ -350,25 +340,25 @@ a.site-link {
     }
 
     h1, h2 {
+        padding: 0 20px;
         position: relative;
         top: 180px;
-        padding: 0 20px;
         text-align: center;
         color: #fff;
         z-index: 10;
     }
 
     h1 {
+        margin-bottom: 25px;
         @include font-garamond;
         font-size: 3.25em;
-        margin-bottom: 25px;
     }
 
     h2 {
         @include font-franklin;
+        font-size: 1em;
         text-transform: uppercase;
         letter-spacing: 4px;
-        font-size: 1em;
     }
 }
 
@@ -395,6 +385,17 @@ a.site-link {
 
 /* Skills */
 
+@media screen and (min-width: $sm-break) {
+    .come-in-skill {
+        transform: translateY(300px);
+        animation: come-in-skill 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+    }
+
+    @keyframes come-in-skill {
+        to { transform: translateY(0); }
+    }
+}
+
 .skills {
     margin: 10px 0 20px 0;
 
@@ -409,18 +410,20 @@ a.site-link {
 
         li {
             display: flex;
-            align-items: center;
-            justify-content: center;
             width: 12.5%;
-            height: 110px;
+            height: 110px;            
+            justify-content: center;
+            align-items: center;
             float: left;
-            background: rgba(255, 255, 255, 0.4);
-            transition: background 0.3s ease, border 0.2s linear;
             cursor: pointer;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(300px);
+            transition: background 0.3s ease, border 0.2s linear;
 
             @media screen and (max-width: 600px) {
                 border-right: 5px solid #fff;
                 border-bottom: 5px solid #fff;
+                transform: translateY(0px);
             }
 
             &:hover {
@@ -495,12 +498,20 @@ a.site-link {
 
 /* Work */
 
+
+@media screen and (min-width: $sm-break) {
+    .come-in-work {
+        transform: translateY(300px);
+        animation: come-in-work 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+    }
+
+    @keyframes come-in-work {
+        to { transform: translateY(0); }
+    }
+}
+
 .work {
     padding: 90px 0;
-
-    .container {
-        /*width: 800px;*/
-    }
 
     .work-list {
         display: flex;
@@ -511,14 +522,14 @@ a.site-link {
             width: 32%;
             margin-bottom: 2%;
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 450px) {
                 width: 48%;
                 margin-bottom: 4%;
             }          
 
             a {
-                position: relative;
                 display: block;
+                position: relative;
                 border: 0;
                 overflow: hidden;
                 transform: translateZ(0);
@@ -589,7 +600,7 @@ a.site-link {
     height: 280px;
     margin: 20px 0;
     padding: 100px 0;
-    background: url('../images/parallax-bg-new.jpg') no-repeat fixed 100% 60%;
+    background: url('../images/parallax-bg-new.jpg') no-repeat fixed 100% 80%;
     background-size: cover;
 }
 
@@ -605,8 +616,9 @@ a.site-link {
     }
 
     .social-box {
-      margin: 20px 0 30px 0;
+      margin: 20px 0 27px 0;
       text-align: center;
+
         a {
             margin-right: 10px;
             font-size: 38px;
@@ -634,12 +646,12 @@ a.site-link {
 
         textarea {
             height: 200px;
+            resize: none;
         }
 
         button {
             width: 100%;
             padding: 15px;
-            background-color: $orange;
             border: 0;
             @include font-proxima-bold;
             font-size: 1em;
@@ -647,6 +659,7 @@ a.site-link {
             letter-spacing: 2px;
             color: #fff;
             cursor: pointer;
+            background-color: $orange;
             transition: background-color 0.3s ease;
 
             &:hover {
@@ -660,25 +673,17 @@ a.site-link {
 /* Footer */
 
 footer {
+    padding: 20px 0;
     background-color: #333;
 
-    .footer-wrapper {
-        padding: 30px;
+    .container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        max-width: 960px;
-        margin: 0 auto;
-
-        @media screen and (max-width: 500px) {
-            flex-direction: column;
-            justify-content: space-between;
-        }
     }
 
     p {
-        margin: 0;
-        color: #949595;
+        margin-bottom: 10px;
+        color: #ddd;
     }
 }
