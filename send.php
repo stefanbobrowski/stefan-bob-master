@@ -26,16 +26,15 @@
 	if(mail($address, $e_subject, $msg, $headers)) {
 
 		echo "<div class='success-msg'>
-			<span class='icon-info-2'></span>
-			Hello, $name.<br>
-			Your message has been sent successfully!<br>
-			I'll get back to you shortly.
-			<a href='/'>Back</a>
+			<p>Hello, $name.</p>
+			<p>Your message has been sent successfully!</p>
+			<p>I'll get back to you shortly.</p>
+			<p><a href='/' class='site-link'>Go back &gt;</a></p>
 		</div>";
 
 	} else {
 
-		echo 'ERROR! Your message could not be sent.';
+		echo '<p>ERROR! Your message could not be sent.</p>';
 
 	}
 
