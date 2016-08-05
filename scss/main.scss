@@ -511,7 +511,7 @@ a.site-link {
 }
 
 .work {
-    padding: 90px 0;
+    padding: 120px 0 90px 0;
 
     .work-list {
         display: flex;
@@ -598,9 +598,7 @@ a.site-link {
 
 .parallax-container {
     height: 280px;
-    margin: 20px 0;
-    padding: 100px 0;
-    background: url('../images/parallax-bg-new.jpg') no-repeat fixed 100% 80%;
+    background: url('../images/parallax-bg.jpg') no-repeat fixed 100% 80%;
     background-size: cover;
 }
 
@@ -609,7 +607,7 @@ a.site-link {
 
 .contact {
     width: 100%;
-    padding: 90px 0;
+    padding: 120px 0 90px 0;
 
     p {
         text-align: center;
