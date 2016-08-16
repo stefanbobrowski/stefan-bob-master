@@ -1,4 +1,4 @@
-<?php if (!isset($_SESSION)) session_start();
+<?php 
 
 	if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
@@ -25,17 +25,9 @@
 	   
 	if(mail($address, $e_subject, $msg, $headers)) {
 
-		echo "<div class='success-msg'>
-			<p>Hello, $name.</p>
-			<p>Your message has been sent successfully!</p>
-			<p>I'll get back to you shortly.</p>
-			<p><a href='/' class='site-link'>Go back &gt;</a></p>
-		</div>";
-
-	} else {
-
-		echo '<p>ERROR! Your message could not be sent.</p>';
+		echo "success";
 
 	}
 
 ?>
+

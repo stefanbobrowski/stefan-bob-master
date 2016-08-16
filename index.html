@@ -17,11 +17,10 @@
 
 <body>
 
-
     <section class="hero">
         <div class="headshot-wrapper">
             <div class="stripe"></div>
-            <img class="headshot" src="images/headshot2.jpg" alt="headshot" />
+            <img class="headshot" src="images/headshot.jpg" alt="headshot" />
         </div>
 
         <img src="images/lightning-left.png" class="lightning left" alt="Lightning flash" />
@@ -29,9 +28,10 @@
 
         <h1>Stefan Bobrowski</h1>
         <h2>Web Developer</h2>
+        <span class="icon-chevron-thin-down hero-arrow"></span>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <h1 class="section-header">Intro</h1>
             <p>Hey there, I'm Stefan! I'm a skilled and well-rounded web developer working out of New York City, hungry to tackle exciting web projects that will give me a chance to offer my <em>unique</em> perspective on front end development. In addition to a Computer Science degree from UCONN, I've made serious headway on a wide range of sites through my experience at Finalsite. So stay a while and peruse my wares, then <a class="site-link contact-link">drop me a line</a> and let's chat about your next project!</p>
@@ -162,7 +162,7 @@
                     <img src="images/work/stfrancis-logo.jpg" alt="Independent School District 15">
                     <div class="work-title">
                         <h2>Independent School District 15</h2>
-                        <h3>Limitless Vapes</h3>
+                        <h3>Finalsite</h3>
                     </div>                
                 </a>
             </li>             
@@ -250,11 +250,10 @@
         </div>
     </section>
 
-    <div class="parallax-container">
- 
-    </div>      
+    <div class="parallax-container"></div>      
 
     <section class="contact" id="contact">
+    
         <div class="container">
             <h1 class="section-header">Contact</h1>
             <p>Feel free to contact me at: <a class="site-link" href="mailto:stefanbobrowski1@gmail.com">stefanbobrowski1@gmail.com</a></p>
@@ -265,6 +264,8 @@
                 <a href="https://github.com/stefanbobrowski" target="_blank"><span class="icon-github-square"></span></a>            
             </div> 
 
+            <div class="message-status"></div>
+
             <form class="contact-form" name="contact-form" action="send.php" method="post">
                 <fieldset>
                     <input type="text" name="name" placeholder="Name" required>
@@ -273,27 +274,14 @@
                     <button type="submit" name="submit" value="Submit">Submit</button>
                 </fieldset>
             </form>
-
-
         </div>
     </section>
 
     <footer>
-
       <div class="container">
-
           <p>&copy; 2016 - Stefan Bobrowski</p>
-
-
-
-          <a href="http://jigsaw.w3.org/css-validator/check/referer">
-            <img style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
-          </a>   
-
       </div>
     </footer>    
-
   
 </body>
 

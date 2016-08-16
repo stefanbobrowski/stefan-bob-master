@@ -49,42 +49,77 @@ $(document).ready(function() {
         }
     }
 
-
-    /* Animate Work */
-
-    // var work = $('.work');
-    // var workList = work.find('.work-list li');
-    // var workVisible = false;
-
-    // function animateWork() {
-    //     if (window.matchMedia('(min-width: 600px)').matches) {
-
-    //         if( work.visible(false) && ! workVisible) {
-    //             console.log('we here');
-
-    //             workList.addClass('come-in-work');
-
-    //             workVisible = true;
-    //         }
-
-    //     }
-    // }
-
-
     $(window).on('scroll load', function(e) {
         animateSkills();
-        // animateWork();
+    });
+    
+
+    /* Work Double Tap on Mobile */
+
+    var workItem = $('.work-list li a');
+    var touchmoved;
+
+    $(workItem).on('touchend', function (e) {
+        'use strict'; //satisfy code inspectors
+        var link = $(this); //preselect the link
+        if (link.hasClass('hover') && touchedmoved != true) {
+            return true;
+        } else {
+            link.addClass('hover');
+            $(workItem).not(this).removeClass('hover');
+            e.preventDefault();
+            return false; //extra, and to make sure the function has consistent return points
+        }
+    }).on('touchmove', function(e) {
+        touchmoved = true;
+    }).on('touchstart', function() {
+        touchmoved = false;
     });
 
-        function goToByScroll(id){
+
+    /* Jump to Section */
+    function goToByScroll(id){
         $('html,body').animate({scrollTop: $("#"+id).offset().top},1000);
         return false;
     }
 
     $('.contact-link').on('click', function() {
-        console.log('hello');
         goToByScroll('contact');
     })
+
+    $('.hero-arrow').on('click', function() {
+        goToByScroll('about');
+    })
+
+
+    /* Contact */
+
+    $('.contact-form').on('submit', function(e) {
+        $(this).find('button').prop('disabled', true);
+        
+        var name = $(this).find('input[name="name"]').val();
+        var email = $(this).find('input[name="email"]').val();
+        var message = $(this).find('textarea[name="message"]').val();
+
+        $.ajax({
+            method: "POST",
+            url: "send.php",
+            data: { name: name, email: email, message: message },
+            success: function(data) {
+                if (data.indexOf(data) != -1) {
+                    $('.message-status').addClass('message-success');
+                    $('.message-status').html('Hey ' + name + "! Your message was sent!");
+                } else {
+                    $('.message-status').addClass('message-fail');                    
+                    $('.message-status').html('Hey ' + name + "! Something went wrong!");
+                }
+
+                $('.contact-form').find('button[name="submit"]').addClass('submitted');
+            }
+        });
+
+        e.preventDefault();
+    });
 
 
 

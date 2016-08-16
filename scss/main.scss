@@ -340,6 +340,7 @@ a.site-link {
     }
 
     h1, h2 {
+        margin-bottom: 25px;
         padding: 0 20px;
         position: relative;
         top: 180px;
@@ -349,7 +350,6 @@ a.site-link {
     }
 
     h1 {
-        margin-bottom: 25px;
         @include font-garamond;
         font-size: 3.25em;
     }
@@ -359,6 +359,22 @@ a.site-link {
         font-size: 1em;
         text-transform: uppercase;
         letter-spacing: 4px;
+    }
+
+    .hero-arrow {
+        display: block;
+        width: 30px;
+        margin: 0 auto;
+        position: relative;
+        top: 180px;
+        font-size: 30px;
+        color: #fff;
+        z-index: 10;
+
+        &:hover {
+          cursor: pointer;
+          color: darken(#fff, 30%);
+        }
     }
 }
 
@@ -498,7 +514,6 @@ a.site-link {
 
 /* Work */
 
-
 @media screen and (min-width: $sm-break) {
     .come-in-work {
         transform: translateY(300px);
@@ -534,7 +549,7 @@ a.site-link {
                 overflow: hidden;
                 transform: translateZ(0);
 
-                &:hover {
+                &:hover, &.hover {
 
                     img {
                         transform: scale(1);
@@ -551,13 +566,6 @@ a.site-link {
                     transform: scale(1.2);
                     transition: transform 0.3s ease;
                     backface-visibility: hidden;
-
-                    ///*https://css-tricks.com/forums/topic/scaling-down-images-with-css-makes-them-blurry/*/
-                    image-rendering: -moz-crisp-edges;         /* Firefox */
-                    image-rendering:   -o-crisp-edges;         /* Opera */
-                    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-                    image-rendering: crisp-edges;
-                    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
                 }
 
                 .work-title {
@@ -598,8 +606,13 @@ a.site-link {
 
 .parallax-container {
     height: 280px;
-    background: url('../images/parallax-bg.jpg') no-repeat fixed 100% 80%;
+    background: url('../images/parallax-bg.jpg') no-repeat fixed 100% 50%;
     background-size: cover;
+
+    @media screen and (max-width: 600px) {
+        background: url('../images/parallax-mobile.jpg');
+        background-position: center;
+    }
 }
 
 
@@ -628,7 +641,26 @@ a.site-link {
               color: lighten($purple, 8%);
             }
         }
-    }    
+    }   
+
+    .message-status {
+
+        &.message-success, &.message-failure {
+            margin-bottom: 30px;    
+            padding: 15px;
+            text-align: center;
+        }
+
+        &.message-success {
+            border: 1px solid green;
+            color: green;
+        }
+
+        &.message-fail {
+            border: 1px solid red;
+            color: red;      
+        }
+    } 
 
     .contact-form {
         width: 100%;
@@ -660,7 +692,7 @@ a.site-link {
             background-color: $orange;
             transition: background-color 0.3s ease;
 
-            &:hover {
+            &.submitted, &:hover {
                 background-color: lighten($orange, 8%);
             }
         }
@@ -671,7 +703,7 @@ a.site-link {
 /* Footer */
 
 footer {
-    padding: 20px 0;
+    padding: 40px 0;
     background-color: #333;
 
     .container {
@@ -681,15 +713,6 @@ footer {
     }
 
     p {
-        margin-bottom: 10px;
         color: #ddd;
-    }
-}
-
-/* Send Message */
-
-.success-msg {
-    p {
-        margin-bottom: 10px;
     }
 }
