@@ -55,38 +55,7 @@ table {
 
 // Fonts
 
-@import 'icons';
-
-@font-face {
-    font-family: 'ProximaNova-Light';
-    src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/ProximaNova-Light.otf')  format('opentype'),
-    url('../fonts/ProximaNova-Light.woff') format('woff'), url('../fonts/ProximaNova-Light.ttf')  format('truetype'), url('../fonts/ProximaNova-Light.svg#ProximaNova-Light') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Franklin Gothic Demi';
-    src: url('../fonts/FranklinGothic-Demi');
-    src: url('../fonts/FranklinGothic-Demi?#iefix') format('embedded-opentype'),
-    url('../fonts/FranklinGothic-Demi.woff2') format('woff2'),
-    url('../fonts/FranklinGothic-Demi.woff') format('woff'),
-    url('../fonts/FranklinGothic-Demi.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Garamond Premier Pro Light Display';
-    src: url('../fonts/GaramondPremrPro-LtDisp.eot');
-    src: url('../fonts/GaramondPremrPro-LtDisp.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/GaramondPremrPro-LtDisp.otf')  format('opentype'),
-    url('../fonts/GaramondPremrPro-LtDisp.woff') format('woff'),
-    url('../fonts/GaramondPremrPro-LtDisp.ttf')  format('truetype'),
-    url('../fonts/GaramondPremrPro-LtDisp.svg#GaramondPremrPro-LtDisp') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@import 'fonts';
 
 
 // Variables
@@ -231,7 +200,7 @@ a.site-link {
 .hero {
     position: relative;
     height: 620px;
-    background: url(../images/hero-bg.jpg) no-repeat 50% 100%;
+    background: url(../images/hero-bg.jpg) no-repeat calc(50% + 4px) 95%;
     background-size: cover;
     overflow: hidden;
 
@@ -340,11 +309,11 @@ a.site-link {
     }
 
     h1, h2 {
-        margin-bottom: 25px;
         padding: 0 20px;
         position: relative;
-        top: 180px;
+        top: 170px;
         text-align: center;
+        line-height: 1;
         color: #fff;
         z-index: 10;
     }
@@ -352,28 +321,31 @@ a.site-link {
     h1 {
         @include font-garamond;
         font-size: 3.25em;
+        letter-spacing: 1px;
     }
 
     h2 {
+        margin: 20px 0 35px 0;
         @include font-franklin;
         font-size: 1em;
-        text-transform: uppercase;
         letter-spacing: 4px;
+        text-transform: uppercase;
     }
 
     .hero-arrow {
         display: block;
-        width: 30px;
+        width: 21px;
         margin: 0 auto;
         position: relative;
-        top: 180px;
-        font-size: 30px;
+        top: 170px;
+        font-size: 21px;
         color: #fff;
+        transition: 0.2s color ease;
         z-index: 10;
 
         &:hover {
           cursor: pointer;
-          color: darken(#fff, 30%);
+          color: $orange;
         }
     }
 }
@@ -382,7 +354,7 @@ a.site-link {
 /* About */
 
 .about {
-    padding: 90px 0 75px 0;
+    padding: 90px 0;
     text-align: center;
 
     p {
@@ -526,7 +498,7 @@ a.site-link {
 }
 
 .work {
-    padding: 120px 0 90px 0;
+    padding: 120px 0;
 
     .work-list {
         display: flex;
@@ -620,7 +592,7 @@ a.site-link {
 
 .contact {
     width: 100%;
-    padding: 120px 0 90px 0;
+    padding: 120px 0;
 
     p {
         text-align: center;
@@ -672,6 +644,12 @@ a.site-link {
             @include font-proxima-light;
             font-size: 1em;
             border: 1px solid #ddd;
+            transition: 0.2s border ease;
+
+
+            &:focus {
+              border-left: 5px solid $orange;
+            }
         }
 
         textarea {

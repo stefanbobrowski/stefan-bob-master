@@ -1,0 +1,75 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'ProximaNova-Light';
+    src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/ProximaNova-Light.otf')  format('opentype'),
+    url('../fonts/ProximaNova-Light.woff') format('woff'), url('../fonts/ProximaNova-Light.ttf')  format('truetype'), url('../fonts/ProximaNova-Light.svg#ProximaNova-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Franklin Gothic Demi';
+    src: url('../fonts/FranklinGothic-Demi');
+    src: url('../fonts/FranklinGothic-Demi?#iefix') format('embedded-opentype'),
+    url('../fonts/FranklinGothic-Demi.woff2') format('woff2'),
+    url('../fonts/FranklinGothic-Demi.woff') format('woff'),
+    url('../fonts/FranklinGothic-Demi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Garamond Premier Pro Light Display';
+    src: url('../fonts/GaramondPremrPro-LtDisp.eot');
+    src: url('../fonts/GaramondPremrPro-LtDisp.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/GaramondPremrPro-LtDisp.otf')  format('opentype'),
+    url('../fonts/GaramondPremrPro-LtDisp.woff') format('woff'),
+    url('../fonts/GaramondPremrPro-LtDisp.ttf')  format('truetype'),
+    url('../fonts/GaramondPremrPro-LtDisp.svg#GaramondPremrPro-LtDisp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Icons */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ka7g9v');
+  src:  url('../fonts/icomoon.eot?ka7g9v#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ka7g9v') format('truetype'),
+    url('../fonts/icomoon.woff?ka7g9v') format('woff'),
+    url('../fonts/icomoon.svg?ka7g9v#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-thin-down:before {
+  content: "\e900";
+}
+.icon-linkedin-square:before {
+  content: "\e902";
+}
+.icon-facebook-square:before {
+  content: "\e906";
+}
+.icon-github-square:before {
+  content: "\e903";
+}
+
