@@ -24,9 +24,7 @@
 	$headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 	   
 	if(mail($address, $e_subject, $msg, $headers)) {
-
 		echo "success";
-
 	}
 
 ?>

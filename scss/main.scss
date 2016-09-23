@@ -210,7 +210,7 @@ a.site-link {
         top: 0; right: 0; bottom: 0; left: 0;
         background-color: rgba(17, 29, 30, 0.8);
         z-index: 9;
-    }    
+    }
 
     .headshot-wrapper {
         position: relative;
@@ -238,13 +238,13 @@ a.site-link {
                 height: 150px;
                 margin: -75px 0 0 -75px;
                 position:absolute;
-                top: 50%; 
-                left: 50%;                
+                top: 50%;
+                left: 50%;
                 border-radius: 100%;
                 box-shadow: 0px 0px 0px 2000px rgba(255, 255, 255, 1);
                 opacity: 0.5;
             }
-        }        
+        }
 
         .headshot {
             display: block;
@@ -261,7 +261,7 @@ a.site-link {
             @media screen and (max-width: 600px) {
                 opacity: 1;
             }
-        }           
+        }
     }
 
     .lightning {
@@ -283,10 +283,10 @@ a.site-link {
             }
             @media screen and (max-width: 1100px) {
                 left: -15%;
-            }     
+            }
             @media screen and (max-width: 900px) {
                 left: -20%;
-            }                       
+            }
         }
 
         &.right {
@@ -294,13 +294,13 @@ a.site-link {
 
             @media screen and (max-width: 1300px) {
                 right: -8%;
-            } 
+            }
             @media screen and (max-width: 1100px) {
                 right: -15%;
-            }  
+            }
             @media screen and (max-width: 900px) {
                 right: -20%;
-            }                          
+            }
         }
 
         &.flash {
@@ -354,7 +354,7 @@ a.site-link {
 /* About */
 
 .about {
-    padding: 90px 0;
+    padding: 60px 0;
     text-align: center;
 
     p {
@@ -385,7 +385,6 @@ a.site-link {
 }
 
 .skills {
-    margin: 10px 0 20px 0;
 
     .skill-list {
         background: url(../images/hero-bg.jpg) no-repeat 0 86%;
@@ -399,7 +398,7 @@ a.site-link {
         li {
             display: flex;
             width: 12.5%;
-            height: 110px;            
+            height: 110px;
             justify-content: center;
             align-items: center;
             float: left;
@@ -415,6 +414,7 @@ a.site-link {
             }
 
             &:hover {
+                cursor: default;
                 background-color: rgba(255, 255, 255, 0);
             }
 
@@ -463,8 +463,12 @@ a.site-link {
                 position: relative;
                 @include font-franklin;
                 text-transform: uppercase;
-                letter-spacing: 2px;            
-                color: #fff;                
+                letter-spacing: 2px;
+                color: #fff;
+
+                &:hover {
+                    cursor: default;
+                }
             }
 
             @media screen and (max-width: 1100px) {
@@ -498,7 +502,7 @@ a.site-link {
 }
 
 .work {
-    padding: 120px 0;
+    padding: 60px 0;
 
     .work-list {
         display: flex;
@@ -509,10 +513,20 @@ a.site-link {
             width: 32%;
             margin-bottom: 2%;
 
+            &:nth-last-child(-n+2) {
+                margin-bottom: 0;
+            }
+
+            @media screen and (min-width: 450px) {
+                &:nth-last-child(-n+3) {
+                    margin-bottom: 0;
+                }
+            }
+
             @media screen and (max-width: 450px) {
                 width: 48%;
                 margin-bottom: 4%;
-            }          
+            }
 
             a {
                 display: block;
@@ -565,7 +579,7 @@ a.site-link {
 
                         &:hover {
                           text-decoration: underline;
-                        }                        
+                        }
                     }
                 }
             }
@@ -592,7 +606,7 @@ a.site-link {
 
 .contact {
     width: 100%;
-    padding: 120px 0;
+    padding: 60px 0;
 
     p {
         text-align: center;
@@ -607,18 +621,18 @@ a.site-link {
             font-size: 38px;
             color: $purple;
             text-decoration: none;
-            transition: color 0.2s linear;        
+            transition: color 0.2s linear;
 
             &:hover {
               color: lighten($purple, 8%);
             }
         }
-    }   
+    }
 
     .message-status {
 
         &.message-success, &.message-failure {
-            margin-bottom: 30px;    
+            margin-bottom: 30px;
             padding: 15px;
             text-align: center;
         }
@@ -630,9 +644,9 @@ a.site-link {
 
         &.message-fail {
             border: 1px solid red;
-            color: red;      
+            color: red;
         }
-    } 
+    }
 
     .contact-form {
         width: 100%;

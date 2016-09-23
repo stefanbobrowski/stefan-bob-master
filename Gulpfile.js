@@ -3,6 +3,7 @@ var sass         = require('gulp-sass');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
+var browserSync  = require('browser-sync').create();
 
 gulp.task('styles', function() {
   gulp.src('scss/**/*.scss')
@@ -25,7 +26,8 @@ gulp.task('scripts', function() {
 });
 
 //Watch task
-gulp.task('default',function() {
-    gulp.watch('scss/**/*.scss',['styles']);
-    gulp.watch('scripts/**/*.js',['scripts']);
+gulp.task('default', ['browserSync'], function() {
+    gulp.watch('scss/**/*.scss',['styles'], browserSync.reload);
+    gulp.watch('scripts/**/*.js',['scripts'], browserSync.reload);
+    gulp.watch('*.html', browserSync.reload);
 });
