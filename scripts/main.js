@@ -33,10 +33,10 @@ $(document).ready(function() {
 
     var skills = $('.skills');
     var skillList = skills.find('.skill-list li');
-    var skillsVisible = false;    
+    var skillsVisible = false;
 
     function animateSkills() {
-        if (window.matchMedia('(min-width: 600px)').matches) {        
+        if (window.matchMedia('(min-width: 600px)').matches) {
             if( skills.visible(false) && ! skillsVisible) {
                 skillList.addClass('come-in-skill');
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
     $(window).on('scroll load', function(e) {
         animateSkills();
     });
-    
+
 
     /* Work Double Tap on Mobile */
 
@@ -96,7 +96,7 @@ $(document).ready(function() {
 
     $('.contact-form').on('submit', function(e) {
         $(this).find('button').prop('disabled', true);
-        
+
         var name = $(this).find('input[name="name"]').val();
         var email = $(this).find('input[name="email"]').val();
         var message = $(this).find('textarea[name="message"]').val();
@@ -110,7 +110,7 @@ $(document).ready(function() {
                     $('.message-status').addClass('message-success');
                     $('.message-status').html('Hey ' + name + "! Your message was sent!");
                 } else {
-                    $('.message-status').addClass('message-fail');                    
+                    $('.message-status').addClass('message-fail');
                     $('.message-status').html('Hey ' + name + "! Something went wrong!");
                 }
 
@@ -120,8 +120,5 @@ $(document).ready(function() {
 
         e.preventDefault();
     });
-
-
-
 
 });

@@ -167,7 +167,7 @@ a.site-link {
 
 .section-header {
     position: relative;
-    max-width: 640px;
+    max-width: 560px;
     margin: 0 auto 40px auto;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -363,10 +363,6 @@ a.site-link {
         &:last-of-type {
             margin-bottom: 0;
         }
-
-        em {
-            font-style: italic;
-        }
     }
 }
 
@@ -398,7 +394,7 @@ a.site-link {
         li {
             display: flex;
             width: 12.5%;
-            height: 150px;
+            height: 120px;
             justify-content: center;
             align-items: center;
             float: left;
@@ -415,7 +411,7 @@ a.site-link {
 
             &:hover {
                 cursor: default;
-                background-color: rgba(255, 255, 255, 0);
+                background-color: rgba(255, 255, 255, 0) !important;
             }
 
             &.appeared {
@@ -423,6 +419,17 @@ a.site-link {
 
                 @media screen and (max-width: 1100px) {
                     border-bottom: 5px solid #fff;
+                }
+            }
+
+            &.has-link {
+                background-color: rgba(255, 255, 255, 0.2);
+                a h4 {
+                    transition: color 0.3s ease;
+                }
+
+                &:hover a h4 {
+                    color: $orange;
                 }
             }
 
@@ -459,15 +466,26 @@ a.site-link {
                 border-right: 0;
             }
 
-            h4 {
+            h4, a {
                 position: relative;
                 @include font-franklin;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 color: #fff;
+            }
 
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
                 &:hover {
-                    cursor: default;
+                    cursor: pointer;
+                }
+
+                h4 {
+                    top: 50%;
+                    transform: translate(0%, -50%);
+                    text-align: center;
                 }
             }
 
@@ -484,9 +502,8 @@ a.site-link {
                 }
             }
         }
-    }
+    } // End of Skill List
 }
-
 
 /* Work */
 
@@ -605,8 +622,13 @@ a.site-link {
 /* Contact */
 
 .contact {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 112px);
     width: 100%;
-    padding: 60px 0;
+
+    .container {
+    }
 
     p {
         text-align: center;
@@ -695,7 +717,9 @@ a.site-link {
 /* Footer */
 
 footer {
-    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    height: 120px;
     background-color: #333;
 
     .container {
