@@ -86,6 +86,9 @@ $(document).ready(function() {
     $('.contact-link').on('click', function() {
         goToByScroll('contact');
     })
+    $('.work-link').on('click', function() {
+        goToByScroll('work');
+    })
 
     $('.hero-arrow').on('click', function() {
         goToByScroll('about');
