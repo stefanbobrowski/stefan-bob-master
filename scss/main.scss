@@ -625,6 +625,7 @@ a.site-link {
     display: flex;
     align-items: center;
     height: calc(100vh - 112px);
+    min-height: 650px;
     width: 100%;
 
     .container {
@@ -719,8 +720,8 @@ a.site-link {
 footer {
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: #333;
+    padding: 15px;
+    background-color: #2b2b2b;
 
     .container {
         display: flex;
