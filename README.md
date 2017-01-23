@@ -4,7 +4,7 @@
 As seen here: http://stefanbobrowski.com
 
 ### Commands:
-***git clone https://github.com/stefanbobrowski/stefan-bob-master.git
-***cd stefan-bob-master
-***npm install
-***gulp
+git clone https://github.com/stefanbobrowski/stefan-bob-master.git <br />
+cd stefan-bob-master <br />
+npm install <br />
+gulp <br />
