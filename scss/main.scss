@@ -609,7 +609,7 @@ a.site-link {
 
 .parallax-container {
     height: 280px;
-    background: url('../images/parallax-bg.jpg') no-repeat fixed 100% 50%;
+    background: url('../images/parallax-bg.jpg') no-repeat fixed center;
     background-size: cover;
 
     @media screen and (max-width: 600px) {
