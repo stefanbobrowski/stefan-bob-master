@@ -1,5 +1,5 @@
 # stefan-bob-master
-## Stefan Bobrowski - Web Developer - Portfolio Website
+## Stefan Bobrowski - Web Developer - Old Portfolio Website
 
 As seen here: http://stefanbobrowski.com
 
